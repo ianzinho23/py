@@ -1,0 +1,59 @@
+def main():
+    numeros = []
+    numeros_pares = []
+    numeros_impares = []
+    numeros_positivos = []
+    numeros_negativos = []
+
+    # Leitura dos 5 números inteiros
+    for i in range(5):
+        numero = int(input(f"Digite o {i+1}º número inteiro: "))
+        numeros.append(numero)
+        
+        # Verifica se o número é par ou ímpar
+        if numero % 2 == 0:
+            numeros_pares.append(numero)
+        else:
+            numeros_impares.append(numero)
+        
+        # Verifica se o número é positivo ou negativo
+        if numero > 0:
+            numeros_positivos.append(numero)
+        elif numero < 0:
+            numeros_negativos.append(numero)
+
+    # Quantidades
+    quantidade_pares = len(numeros_pares)
+    quantidade_impares = len(numeros_impares)
+    quantidade_positivos = len(numeros_positivos)
+    quantidade_negativos = len(numeros_negativos)
+    quantidade_total = len(numeros)
+
+    # Maior e menor número
+    maior_numero = max(numeros)
+    menor_numero = min(numeros)
+
+    # Médias
+    media_pares = sum(numeros_pares) / quantidade_pares if quantidade_pares > 0 else 0
+    media_impares = sum(numeros_impares) / quantidade_impares if quantidade_impares > 0 else 0
+    media_total = sum(numeros) / quantidade_total if quantidade_total > 0 else 0
+
+    # Mostrar resultados
+    print(f"Quantidade de números pares: {quantidade_pares}")
+    print(f"Quantidade de números ímpares: {quantidade_impares}")
+    print(f"Quantidade de números positivos: {quantidade_positivos}")
+    print(f"Quantidade de números negativos: {quantidade_negativos}")
+    print(f"Quantidade total de números: {quantidade_total}")
+    print(f"Maior número: {maior_numero}")
+    print(f"Menor número: {menor_numero}")
+    print(f"Média de números pares: {media_pares}")
+    print(f"Média de números ímpares: {media_impares}")
+    print(f"Média de todos os números: {media_total}")
+
+    # Mostrar os números lidos na ordem inversa
+    print("Números lidos na ordem inversa:")
+    for num in reversed(numeros):
+        print(num)
+
+if __name__ == "__main__":
+    main()
